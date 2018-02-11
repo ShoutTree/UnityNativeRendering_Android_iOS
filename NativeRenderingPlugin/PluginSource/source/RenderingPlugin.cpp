@@ -115,6 +115,16 @@ extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API RegisterPlugin()
 {
 	UnityRegisterRenderingPlugin(UnityPluginLoad, UnityPluginUnload);
 }
+#elif UNITY_IOS
+typedef void    (UNITY_INTERFACE_API * PluginLoadFunc)(IUnityInterfaces* unityInterfaces);
+typedef void    (UNITY_INTERFACE_API * PluginUnloadFunc)();
+
+extern "C" void    UnityRegisterRenderingPlugin(PluginLoadFunc loadPlugin, PluginUnloadFunc unloadPlugin);
+
+extern "C" void UNITY_INTERFACE_EXPORT UNITY_INTERFACE_API RegisterPlugin()
+{
+//    UnityRegisterRenderingPlugin(UnityPluginLoad, UnityPluginUnload);
+}
 #endif
 
 // --------------------------------------------------------------------------
@@ -281,8 +291,12 @@ static void UNITY_INTERFACE_API OnRenderEvent(int eventID)
 {
 	// Unknown / unsupported graphics device type? Do nothing
 	if (s_CurrentAPI == NULL)
+    {
+        s_CurrentAPI = CreateRenderAPI(kUnityGfxRendererOpenGLES20);
+        s_CurrentAPI->ProcessDeviceEvent(kUnityGfxDeviceEventInitialize, s_UnityInterfaces);
 		return;
-
+    }
+    
 	DrawColoredTriangle();
 	ModifyTexturePixels();
 	ModifyVertexBuffer();

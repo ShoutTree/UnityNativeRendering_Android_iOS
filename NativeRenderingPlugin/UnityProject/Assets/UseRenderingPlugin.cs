@@ -46,14 +46,14 @@ public class UseRenderingPlugin : MonoBehaviour
 #endif
 	private static extern IntPtr GetRenderEventFunc();
 
-#if UNITY_WEBGL && !UNITY_EDITOR
+	#if !UNITY_EDITOR && (UNITY_WEBGL || UNITY_IOS)
 	[DllImport ("__Internal")]
 	private static extern void RegisterPlugin();
 #endif
 
 	IEnumerator Start()
 	{
-#if UNITY_WEBGL && !UNITY_EDITOR
+		#if !UNITY_EDITOR && (UNITY_WEBGL || UNITY_IOS)
 		RegisterPlugin();
 #endif
 		CreateTextureAndPassToPlugin();
