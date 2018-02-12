@@ -12,6 +12,8 @@ public class MyBuildPostprocessor
 	{
 		if (target == BuildTarget.iOS)
 			OnPostprocessBuildIOS(pathToBuiltProject);
+//		else if (target == BuildTarget.Android)
+//			OnPostprocessBuildAndroid(pathToBuiltProject);
 	}
 
 	private static void OnPostprocessBuildIOS(string pathToBuiltProject)
