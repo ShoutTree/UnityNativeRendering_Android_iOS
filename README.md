@@ -1,16 +1,17 @@
+Unity Native Rendering on **Android/iOS**
+* Using Native Rendering(OpenGL ES) as Unity Plugin to render on **Android/iOS**
 
-Using Native Rendering(OpenGL ES) as Unity Plugin to render on **Android/iOS**
+* This repository was originally published in bitbucket using mercurial:
+** https://bitbucket.org/Unity-Technologies/graphicsdemos
 
-This repository was originally published in bitbucket using mercurial:
-*https://bitbucket.org/Unity-Technologies/graphicsdemos
+* I (and I think most people) found it in [Unity docs](https://docs.unity3d.com/Manual/NativePluginInterface.html).
 
-I (and I think most people) found it in [Unity docs](https://docs.unity3d.com/Manual/NativePluginInterface.html).
+* I transfered it into git using [fast-export](https://github.com/frej/fast-export) with the method of the best Answer of [this](https://stackoverflow.com/questions/16037787/convert-mercurial-project-to-git).
 
-I transfered it into git using [fast-export](https://github.com/frej/fast-export) with the method of the best Answer of [this](https://stackoverflow.com/questions/16037787/convert-mercurial-project-to-git).
+* The original repository doesn't directly support android/ios. Though there's code try to do so, it's not finished yet.
 
-The original repository doesn't directly support android/ios. Though there's code try to do so, it's not finished yet.
+* I just made a few change to render the content on **android/ios**. I know it's not the best(or even a proper) way, but it works. :) 
 
-I just made a few change to render the content on **android/ios**. I know it's not the best(or even a proper) way, but it works. :) 
 
 #=============Original README.md================
 # Graphics Example Projects
