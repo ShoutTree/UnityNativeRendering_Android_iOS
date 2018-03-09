@@ -13,6 +13,8 @@
 
 * I just made a few change to render the content on **Android/iOS**. I know it's not the best(or even a proper) way, but it works. :)
 
+* Tested on Unity 5.5.2f1 and 5.6.4p1
+
 
 #=============Original README.md================
 # Graphics Example Projects
